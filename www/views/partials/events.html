@@ -1,0 +1,47 @@
+<div class="inset" hide-sm></div>
+<div role="tabpanel" id="tab2-content" aria-labelledby="tab2" md-swipe-left="next()" md-swipe-right="previous()" layout="row" layout-align="center center">
+    <md-list flex>
+        
+        <md-subheader class="md-no-sticky">Free</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="event in events|filter:{type:'free'}" ng-click="expand($event, event)">
+            <md-icon class="md-avatar" md-svg-icon="action:ic_search_24px" aria-label="Search"></md-icon>
+            <div class="md-list-item-text" layout="column">
+                <h3>{{event.name}}</h3>
+                <h4>{{event.date_time | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                <p ng-if="event.mosque">@{{event.mosque}}</p>
+                <div ng-show="event.selected">
+                    <p>{{event.description}}</p>
+                </div>
+            </div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader class="md-no-sticky">Pledge</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="event in events|filter:{type:'pledge'}" >
+            <md-icon class="md-avatar" md-svg-icon="action:ic_event_24px" aria-label="Search"></md-icon>
+            <div class="md-list-item-text" layout="column" ng-click="expand($event, event)">
+                <h3>{{event.name}}</h3>
+                <h4>{{event.date_time | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                <p ng-if="event.mosque">@{{event.mosque}}</p>
+                <div ng-show="event.selected">
+                    <p>{{event.description}}</p>
+                </div>
+            </div>
+            <md-button ng-click="donate(event,ev)">Donate</md-button>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader class="md-no-sticky">Pledge</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="event in events|filter:{type:'ticket_sale'}" >
+            <md-icon class="md-avatar" md-svg-icon="action:ic_event_24px" aria-label="Search"></md-icon>
+            <div class="md-list-item-text" layout="column" ng-click="expand($event, event)">
+                <h3>{{event.name}}</h3>
+                <h4>{{event.date_time | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                <p ng-if="event.mosque">@{{event.mosque}}</p>
+                <div ng-show="event.selected">
+                    <p>{{event.description}}</p>
+                </div>
+            </div>
+            <md-button ng-click="buy_ticket(event,ev)">Buy Ticket</md-button>
+            <!-- <a ui-sref="buy_ticket({id:event.id})">Buy Ticket</a> -->
+        </md-list-item>
+    </md-list>
+</div>

@@ -1,0 +1,51 @@
+<div layout="column" ng-cloak class="md-inline-form">
+  <md-subheader class="md-no-sticky">Post a Job</md-subheader>
+  <md-content layout-padding>
+    <form name="createJobForm" ng-submit="createJob(job)">
+        <div layout layout-sm="column">
+	      	<md-input-container flex>
+				<label>Title</label>
+				<input ng-model="job.title">
+		    </md-input-container flex>
+		</div>
+		<div layout layout-sm="column">
+	      	<md-input-container flex>
+				<label>Description</label>
+				<input ng-model="job.description">
+		    </md-input-container flex>
+		</div>
+		<div layout layout-sm="column">
+	      	<md-input-container flex>
+				<label>Tags</label>
+				<input ng-model="job.tags">
+		    </md-input-container flex>
+		</div>
+		<div layout layout-sm="column">
+		    <md-input-container>
+		      	<label>Location</label>
+		      	<input ng-model="job.location" type="text" >
+		    </md-input-container>
+		</div>
+		
+		<div layout layout-sm="column">
+	        <md-input-container flex>
+	          	<label>Address</label>
+	          	<input ng-model="job.address" type="text" >
+	        </md-input-container>
+        </div>
+        <div layout layout-sm="column">
+	        <md-input-container flex>
+	        	<label>Date</label>
+	        	<input type="date" name = "date_time" ng-model="job.date_time">
+	      		
+	      	</md-input-container>
+        </div>
+        <div layout layout="row">
+	        <md-input-container flex layout-sm="row">
+	      		<md-button type="submit" aria-label="Save Event" class="md-raised md-primary">Submit</md-button>
+      		</md-input-container>
+        </div>
+      
+    </form>
+  </md-content>
+</div>

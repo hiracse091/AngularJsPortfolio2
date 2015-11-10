@@ -1,0 +1,35 @@
+<div layout="column">
+	<form name="jobSearchForm" ng-submit="search(job)">
+        <md-content layout-padding layout="column" layout-align="center">
+            <md-input-container>
+                <label>Title</label>
+                <input ng-model="job.title" type="text">
+            </md-input-container>
+            <md-input-container>
+                <label>Tags</label>
+                <input ng-model="job.tag">
+            </md-input-container>
+            <md-input-container layout layout-sm="row">                
+                <md-button type="submit" aria-label="Login" class="md-raised md-primary">Search</md-button>               
+            </md-input-container>
+            
+        </md-content>   
+    </form>
+    <md-list flex>
+        
+        <md-subheader class="md-no-sticky">Search Results</md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="job in jobs" >
+            <md-icon class="md-avatar" md-svg-icon="action:ic_search_24px" aria-label="Search"></md-icon>
+            <div class="md-list-item-text" layout="column" ng-click="expand($event, job)">
+                <h3>{{job.title}}</h3>
+                <h4>{{job.date_time | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                <p >{{job.tags}}</p>
+                <div ng-show="job.selected">
+                    <p>{{job.description}}</p>
+                </div>
+            </div>
+            <a ui-sref="job.bidJob({id:job.id})" class="md-block">
+                <md-icon md-svg-icon="editor:ic_mode_edit_24px" aria-label="Edit" >         </md-icon></a>
+        </md-list-item>
+    </md-list>
+</div>

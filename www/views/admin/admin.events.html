@@ -1,0 +1,11 @@
+<md-content flex>    
+    <md-list flex>
+    	<md-subheader class="md-no-sticky">Events</md-subheader>
+		<md-list-item ng-repeat="event in events" class="md-2-line">
+	        <md-icon md-svg-icon="editor:ic_format_list_bulleted_24px"></md-icon>
+		    <md-content flex>    <p>{{ event.name }}</p></md-content>
+		    <a ui-sref="admin.edit_event({id:event.id})">
+		    	<md-icon md-svg-icon="editor:ic_mode_edit_24px" aria-label="Edit" >	    	</md-icon></a>
+		</md-list-item>
+	</md-list>
+</md-content>

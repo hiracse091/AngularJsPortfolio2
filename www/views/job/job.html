@@ -1,0 +1,14 @@
+<md-subheader class="md-no-sticky">
+	<div layout layout-sm="row">
+		<a ui-sref='job.create'><md-button  aria-label="Add Event" class="md-raised">Post a Job</md-button></a>
+		<a ui-sref='job.search'><md-button  aria-label="Add Event" class="md-raised">Search Job</md-button></a>
+		<a ng-show="showChatBtn" ui-sref='job.message({jobId:job.id})'><md-button class="md-raised" aria-label="Comment">
+            <md-icon md-svg-src="communication:ic_comment_24px"></md-icon>
+            Chat
+        </md-button></a>
+    </div>
+</md-subheader>
+<md-content flex>
+    <ui-view layout="column" layout-fill>
+    </ui-view>
+</md-content>

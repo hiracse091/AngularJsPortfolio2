@@ -1,0 +1,18 @@
+<md-content layout="column" layout-margin layout-align="center" class="message-box">
+	<div ng-repeat="m in messages" layout="row" layout-align="start end" ng-class="{job_seeker: m.sender=='job_seeker'}">		
+	 	<div layout="row">
+	 		<md-icon ng-if="m.sender=='job_poster'" md-svg-icon="communication:ic_textsms_24px" aria-label="avatar"></md-icon>
+	        <div layout="column" layout-margin layout-padding class="msg-text">	                
+	            <span class="md-caption">{{m.date_time | date:'MM/dd/yyyy @ h:mma'}}</span>
+	            <span>{{m.text}}</span>
+	        </div>
+	 	</div>
+	</div>
+	
+</md-content>
+<form name="jobMessageForm" ng-submit="sendMessage(msg)">
+	<md-content layout="row" layout-align="center end" class="message-box">        
+        <textarea required columns="2" ng-model="msg.text"></textarea>
+        <md-button type="submit" aria-label="send" class="md-raised md-primary">Send</md-button>  
+	</md-content>
+</form>

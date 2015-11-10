@@ -1,0 +1,14 @@
+<div class="inset" hide-sm></div>
+<div role="tabpanel" id="tab1-content" aria-labelledby="tab1" md-swipe-left="next()" md-swipe-right="previous()" layout="row" layout-align="center center">
+    <md-list flex>
+        <md-subheader class="md-no-sticky">Prayer Times</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="salat in salats">
+            <md-icon md-svg-icon="communication:ic_message_24px"></md-icon>
+            <div class="md-list-item-text">
+                <h3> {{ salat.time }} </h3>
+                <p> {{ salat.name }} </p>
+            </div>
+            <md-switch class="md-secondary" ng-model="salat.alarm"></md-switch>
+        </md-list-item>
+    </md-list>
+</div>

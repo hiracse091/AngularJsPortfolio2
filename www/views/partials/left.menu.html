@@ -1,0 +1,40 @@
+<md-sidenav class="left-menu" layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <md-toolbar class="md-hue-2">
+        <span flex></span>
+        <div layout="row" layout-align="start center">
+            <md-icon class="md-avatar" md-svg-icon="avatars:svg-1"></md-icon>
+            <span flex></span>
+        </div>
+        <span flex></span>
+        <div class="md-body-2">Firstname Lastname</div>
+        <div class="md-body-1">email@domainname.com</div>
+    </md-toolbar>
+    <md-list>
+        <md-list-item ng-repeat="item in menu" role="link" md-ink-ripple>
+            <a ng-class="{'active' : isSelected()}" ng-href="{{item.link}}">
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+                    </div>
+                    <div class="inset">
+                        <p class="md-body-2">{{item.title}}</p>
+                    </div>
+                </md-item-content>                   
+            </a>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader class="md-no-sticky">Management</md-subheader>
+        <md-list-item ng-repeat="item in admin" role="link" md-ink-ripple>
+            <a ng-class="{'active' : isSelected()}" ng-href="{{item.link}}">
+                <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                    <div class="inset">
+                        <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+                    </div>
+                    <div class="inset">
+                        <p class="md-body-2">{{item.title}}</p>
+                    </div>
+                </md-item-content>                   
+            </a>
+        </md-list-item>
+    </md-list>
+</md-sidenav>

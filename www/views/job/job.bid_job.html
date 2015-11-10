@@ -1,0 +1,43 @@
+<div layout="column">
+    <div layout-margin class="md-title md-primary">Job description</div>    
+
+	
+    <md-content class="jb-content" layout-margin layout-padding layout="column">
+        <div layout="column" layout-sm="column">
+            <span class="md-subhead">Title</span>
+            <div class="md-body-1"><p >{{job.title}}</p></div>
+        </div>
+        <div layout="column" layout-sm="column">
+            <span class="md-subhead">Tags</span>
+            <div class="md-body-1"><p >{{job.tags}}</p></div>
+        </div>
+        <div layout="column" layout-sm="column">
+            <span class="md-subhead">Description</span>
+            <div class="md-body-1"><p >{{job.description}}</p></div>
+        </div>
+    </md-content>
+    <md-divider></md-divider>
+    <form name="jobBidForm" ng-submit="bidJob(job)">
+        <!-- <div layout layout-sm="row" class="message-button">
+            <span>See messages for this job</span>
+            <span><a ui-sref='job.message({id:job.id})'><md-button class="md-raised" aria-label="Comment">
+            <md-icon md-svg-src="communication:ic_comment_24px"></md-icon>
+        </md-button></a></span>
+        </div> -->
+        <md-content layout-margin layout="column" >
+            <md-subheader class="md-primary">Send your proposal for this job</md-subheader>
+            <md-input-container>
+                <label>Cover letter</label>
+                <textarea ng-model="job.proposal" required columns="2" md-maxlength="150"></textarea>
+                <div ng-messages="job.proposal.$error">
+                   <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>            
+
+            <md-input-container layout layout-sm="row">                
+                <md-button type="submit" aria-label="submit" class="md-raised md-primary">Send Proposal</md-button>               
+            </md-input-container>
+            
+        </md-content>   
+    </form>
+</div>

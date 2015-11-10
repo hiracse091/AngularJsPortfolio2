@@ -1,0 +1,68 @@
+<div layout="column" class="login-area">	
+	<md-subheader class="md-no-sticky">
+		<h3>Australian Muslim Unity Trust (AMUT)</h3>
+	</md-subheader>
+	<md-content layout-padding layout="column" layout-align="center">	
+		
+		<md-input-container>
+			<label>Email</label>
+			<input ng-model="user.email" type="email">
+	    </md-input-container>
+	    <md-input-container>
+			<label>Password</label>
+			<input ng-model="user.passowrd">
+    	</md-input-container>
+		<md-input-container layout layout-sm="row">
+      		<md-button type="submit" aria-label="Login" class="md-raised md-primary">Login</md-button>
+        </md-input-container>
+	    
+	</md-content>
+</div>
+<md-divider></md-divider>
+<div layout="column" ng-cloak class="md-inline-form">
+	
+	<form name="memberRegistrationForm" ng-submit="register(member)">
+	    <md-content layout-padding class="autoScroll">
+	    	<md-subheader class="md-no-sticky">New Member Registration</md-subheader>
+		    <md-input-container class="md-icon-float md-block">
+		      	<label>Name</label>
+		      	<md-icon md-svg-icon="social:ic_person_24px" class="name"></md-icon>
+		      	<input ng-model="member.name" type="text">
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+		    	<label>Phone Number</label>
+		      	<md-icon md-svg-icon="communication:ic_phone_24px"></md-icon>
+		      	<input ng-model="member.phone" type="text" >
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+		    	<label>Email</label>
+		      	<md-icon md-svg-icon="communication:ic_email_24px" class="email"></md-icon>
+		      	<input ng-model="member.email" type="email" ng-required="true">
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+		    	<label>Address</label>
+		      	<md-icon md-svg-icon="maps:ic_place_24px" style="display:inline-block;"></md-icon>
+		      	<input ng-model="member.address" type="text" >
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+		    	<label>Mem. Terms</label>
+		      	<md-icon md-svg-icon="maps:ic_place_24px" style="display:inline-block;"></md-icon>
+		      	<input ng-model="member.mem_terms" type="text" >
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+				<label>No. of Units</label>
+				<md-icon md-svg-icon="action:ic_payment_24px" style="display:inline-block;"></md-icon>
+				<input ng-model="member.no_units" type="number" flex>			
+		    </md-input-container>
+		    <md-input-container class="md-icon-float md-block">
+		    	<label>Emergency  Contact</label>
+		      	<md-icon md-svg-icon="communication:ic_phone_24px"></md-icon>
+		      	<input ng-model="member.emergency_contact" type="text" >
+		    </md-input-container>
+		    <div layout layout-sm="row">
+	      		<md-button type="submit" aria-label="Save Registration" class="md-raised md-primary">Submit</md-button>
+	        </div>
+	    </md-content>
+	    
+    </form>
+</div>

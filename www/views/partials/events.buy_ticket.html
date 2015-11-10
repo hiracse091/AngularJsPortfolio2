@@ -1,0 +1,40 @@
+<md-dialog aria-label="Form" style="min-width:70%;max-height:810px; "> 
+	<form name="pledgeForm">
+		<md-toolbar>
+		    <div class="md-toolbar-tools">
+		        <h2>Buy Ticket</h2>
+		        <span flex></span>
+		        <md-button class="md-icon-button" ng-click="cancel()">X
+		          <!-- <md-icon md-svg-src="action:ic_close_24px" aria-label="Close dialog"></md-icon> -->
+		        </md-button>
+		    </div>
+		</md-toolbar> 
+		<md-dialog-content>
+	      	<div class="md-dialog-content" layout="column">				
+				<div layout="column" layout-sm="column"> 
+					
+					<h4>Event</h4>
+					<md-divider></md-divider>
+					<p class="md-body-1" ng-bind="event.name"></p> 
+					<h4>Price</h4>
+					<p class="md-body-1" ng-bind="event.cost|currency"></p> 
+					
+
+					<md-input-container flex> 
+						<label>Number of ticket</label> 
+						<input ng-model="event.number_of_ticket" ng-init = "event.number_of_ticket = 0" min="0" type="number"> 
+					</md-input-container> 
+					<h4>Total Cost</h4>
+					<p class="md-body-1" > {{ total()|currency }}</p> 
+				</div> 
+				<div layout="column">
+					<p class="md-body-2 success-msg">{{message}}</p>
+				</div>
+
+				<div class="md-actions" layout="row"> 
+					<span flex></span> <md-button ng-click="cancel()"> Cancel </md-button> <md-button ng-click="purchaseTicket(event)" class="md-primary"> Buy </md-button> 
+				</div>
+			</div>
+		</md-dialog-content>
+	</form> 
+</md-dialog>
